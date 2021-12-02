@@ -9,7 +9,7 @@ on:
 jobs:
   build3-1:
     env:
-      project-directory: ./dotnet31
+      PROJECT-DIRECTORY: ./dotnet31
     runs-on: ubuntu-latest
 
     steps:
@@ -20,10 +20,10 @@ jobs:
         dotnet-version: 3.1.x
     - name: Restore dependencies
       run: dotnet restore
-      working-directory: ${{ project-directory }}
+      working-directory: $PROJECT-DIRECTORY
     - name: Build
       run: dotnet build --no-restore
-      working-directory: ${{ project-directory }}
+      working-directory: $PROJECT-DIRECTORY
     - name: Test
       run: dotnet test --no-build --verbosity normal
-      working-directory: ${{ project-directory }}
+      working-directory: $PROJECT-DIRECTORY
