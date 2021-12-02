@@ -9,7 +9,7 @@ on:
 jobs:
   build3-1:
     env:
-      PROJECT-DIRECTORY: ./dotnet3.1
+      PROJECT-DIRECTORY: dotnet3.1
     runs-on: ubuntu-latest
 
     steps:
