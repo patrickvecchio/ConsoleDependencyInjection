@@ -20,11 +20,11 @@ jobs:
       with:
         dotnet-version: 3.1.x
     - name: Restore dependencies
-      working-directory: $PROJECT_DIRECTORY
+      working-directory: ${{ PROJECT_DIRECTORY }}
       run: dotnet restore $SOLUTION_FILE
     - name: Build
-      working-directory: $PROJECT_DIRECTORY
+      working-directory: ${{ PROJECT_DIRECTORY }}
       run: dotnet build --no-restore $SOLUTION_FILE
     - name: Test
-      working-directory: $PROJECT_DIRECTORY
+      working-directory: ${{ PROJECT_DIRECTORY }}
       run: dotnet test --no-build --verbosity normal $SOLUTION_FILE
