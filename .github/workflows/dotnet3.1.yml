@@ -12,8 +12,6 @@ jobs:
       PROJECT_DIRECTORY: ./dotnet3.1
       SOLUTION_FILE: DependencyInjection.sln
     runs-on: ubuntu-latest
-    defaults:
-      run:
 
     steps:
     - uses: actions/checkout@v2
