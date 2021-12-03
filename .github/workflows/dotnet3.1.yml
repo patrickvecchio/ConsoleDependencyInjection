@@ -12,6 +12,9 @@ jobs:
       PROJECT_DIRECTORY: dotnet3.1
       SOLUTION_FILE: DependencyInjection.sln
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: $PROJECT_DIRECTORY
 
     steps:
     - uses: actions/checkout@v2
@@ -22,14 +25,10 @@ jobs:
     - name: List files
       run: ls -la
     - name: List files in project folder
-      working-directory: $PROJECT_DIRECTORY
       run: ls -la
     - name: Restore dependencies
-      working-directory: $PROJECT_DIRECTORY
-      run: dotnet restore $PROJECT_DIRECTORY
+      run: dotnet restore
     - name: Build
-      working-directory: $PROJECT_DIRECTORY
-      run: dotnet build --no-restore $SOLUTION_FILE
+      run: dotnet build --no-restore
     - name: Test
-      working-directory: $PROJECT_DIRECTORY
-      run: dotnet test --no-build --verbosity normal $SOLUTION_FILE
+      run: dotnet test --no-build --verbosity normal
