@@ -22,14 +22,10 @@ jobs:
     - name: List files
       run: ls -la
     - name: List files in project folder
-      working-directory: $PROJECT_DIRECTORY
-      run: ls -la
+      run: ls -la $PROJECT_DIRECTORY
     - name: Restore dependencies
-      working-directory: $PROJECT_DIRECTORY
-      run: dotnet restore
+      run: dotnet restore $PROJECT_DIRECTORY
     - name: Build
-      working-directory: $PROJECT_DIRECTORY
-      run: dotnet build --no-restore
+      run: dotnet build --no-restore $PROJECT_DIRECTORY
     - name: Test
-      working-directory: $PROJECT_DIRECTORY
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test --no-build --verbosity normal $PROJECT_DIRECTORY
