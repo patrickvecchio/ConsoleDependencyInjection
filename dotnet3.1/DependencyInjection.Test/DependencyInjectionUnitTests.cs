@@ -48,7 +48,7 @@ namespace DependencyInjection.Test
                 {
                     _configuration.GetSection("dependency1").Bind(settings);
                 });
-            _services.AddScoped<IDependency1, MockDependency1>();
+            _services.AddScoped<IDependency1, Dependency_1>();
 
             // dependency2
             _services.Configure<Dependency2Options>(_configuration.GetSection("dependency2"));
