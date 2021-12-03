@@ -9,7 +9,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dependency1", "Dependency1\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjection.Test", "DependencyInjection.Test\DependencyInjection.Test.csproj", "{FE77846E-824B-4C3E-B8E1-D00B7F4C9C7B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dependency2", "Dependency2\Dependency2.csproj", "{0484D77D-9EE7-4578-9527-8876C858C59E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dependency2", "Dependency2\Dependency2.csproj", "{0484D77D-9EE7-4578-9527-8876C858C59E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{D592341D-ED01-431E-AEB6-C2967EA1ADE1}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
+		..\.github\workflows\dotnet3.1.yml = ..\.github\workflows\dotnet3.1.yml
+		..\README.md = ..\README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
