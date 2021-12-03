@@ -10,6 +10,7 @@ jobs:
   build3-1:
     env:
       PROJECT-DIRECTORY: dotnet3.1
+      SOLUTION_FILE: DependencyInjection.sln
     runs-on: ubuntu-latest
 
     steps:
@@ -19,11 +20,8 @@ jobs:
       with:
         dotnet-version: 3.1.x
     - name: Restore dependencies
-      working-directory: $PROJECT-DIRECTORY
-      run: dotnet restore
+      run: dotnet restore $PROJECT_DIRECTORY/$SOLUTION_FILE
     - name: Build
-      working-directory: $PROJECT-DIRECTORY
-      run: dotnet build --no-restore
+      run: dotnet build --no-restore $PROJECT_DIRECTORY/$SOLUTION_FILE
     - name: Test
-      working-directory: $PROJECT-DIRECTORY
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test --no-build --verbosity normal $PROJECT_DIRECTORY/$SOLUTION_FILE
