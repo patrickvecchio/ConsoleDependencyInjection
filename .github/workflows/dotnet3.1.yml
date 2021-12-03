@@ -22,7 +22,8 @@ jobs:
     - name: List files
       run: ls -la
     - name: List files in project folder
-      run: ls -la $PROJECT_DIRECTORY
+      working-directory: $PROJECT_DIRECTORY
+      run: ls -la
     - name: Restore dependencies
       working-directory: $PROJECT_DIRECTORY
       run: dotnet restore $PROJECT_DIRECTORY
