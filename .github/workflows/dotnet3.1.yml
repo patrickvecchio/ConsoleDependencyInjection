@@ -19,6 +19,10 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.x
+    - name: List files
+      run: ls -la
+    - name: List files in project folder
+      run: ls -la $PROJECT_DIRECTORY
     - name: Restore dependencies
       working-directory: $PROJECT_DIRECTORY
       run: dotnet restore $PROJECT_DIRECTORY
